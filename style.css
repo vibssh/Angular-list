@@ -1,0 +1,19 @@
+﻿[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        main {
+            display: block;
+            width: 100%;
+            max-width: 960px;
+        }
+
+        #get-list, #invitees-list {
+            display: inline-block;
+            width: 48%;
+            vertical-align: top;
+        }
+
+        #get-list {
+            border-right: 1px solid #333;
+        }

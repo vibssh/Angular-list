@@ -1,0 +1,47 @@
+﻿<!doctype html>
+<html data-ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <main data-ng-controller="listCtrl" data-ng-cloak>
+        <div id="get-list">
+            <h1>All Invitees list</h1>
+            <ul data-ng-repeat="guest in guests | limitTo:10 ">
+                <!-- Limited the items to only 10 just for demo purposes-->
+                <li><a href="#" data-ng-click="addInvities($event, guest); addSingleInvitee($event,guest, $index)" class="loginItem">{{guest.login}}</a></li>
+            </ul>
+        </div>
+
+        <div id="invitees-list">
+
+            <!--Single Invitees-->
+            <div class="invitee" data-ng-show="(singleInvitee.length > 0)" data-ng-cloak>
+                <h2>Single Invitee</h2>
+
+                <ul data-ng-repeat="invite in singleInvitee track by $index ">
+                    <li>{{invite.login}}</li>
+                </ul>
+            </div>
+
+
+            <!-- List of invitees-->
+            <div class="invitees" data-ng-show="(invitees.length > 0)" data-ng-cloak>
+                <h2>List of Invitees Expected</h2>
+                <ul data-ng-repeat="invite in invitees track by $index">
+                    <li><a href="#" data-ng-click="removeMe(invite)">{{invite.login}}</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </main>
+
+    <script src="/lib/angular.js" type="text/javascript"></script>
+    <script src="/scripts/app.js" type="text/javascript"></script>
+</body>
+</html>
